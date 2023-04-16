@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+
+<f:metadata>
+    <f:viewParam name="id" value="#{editPersonaController.persona}" 
+        converter="#{personaConverter}" converterMessage="Persona desconocida"
+        required="true" requiredMessage="Petición incorrecta, utiliza un link del sistema"
+    />
+</f:metadata>
+
+<h:messages />
+<body>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="Id:" />
+			<h:inputText id="id" value="#{editPersonaController.persona.id}" disabled="true" />
+
+			<h:outputText value="Nombre:" />
+			<h:inputText id="nombre" value="#{editPersonaController.persona.nombre}" />
+
+			<h:outputText value="Apellidos:" />
+			<h:inputText id="apellidos" value="#{editPersonaController.persona.apellidos}" />
+
+			<h:outputText value="Fecha Nacimiento:" />
+			<h:inputText id="fechaNacimiento" value="#{editPersonaController.persona.fechaNacimiento}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:inputText>
+
+			<h:outputText value="Observaciones:" />
+			<h:inputText id="observaciones" value="#{editPersonaController.persona.observaciones}" />
+
+			<h:outputLabel></h:outputLabel>
+			<h:commandButton action="#{editPersonaController.modifyPersonaDB()}"
+				value="Modificar"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</body>
+</html>

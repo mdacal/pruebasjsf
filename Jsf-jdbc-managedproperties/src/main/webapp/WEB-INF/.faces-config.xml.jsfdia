@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="welcome::#views#bienvenido.xhtml"
+    NAME="output" PATH="/views/bienvenido.xhtml"
+    TARGET="rules:#views#bienvenido.xhtml" TITLE="welcome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#bienvenido.xhtml"
+  PATH="/views/bienvenido.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#bienvenido.xhtml:0" NAME="item"
+   PATH="/views/bienvenido.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="add::#views#anyadirPersona.xhtml"
+    NAME="output" PATH="/views/anyadirPersona.xhtml"
+    TARGET="rules:#views#anyadirPersona.xhtml" TITLE="add" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#views#bienvenido.xhtml:1" NAME="item1"
+   PATH="/views/bienvenido.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="modificarPersona::#views#modificarPersona.xhtml" NAME="output"
+    PATH="/views/modificarPersona.xhtml"
+    TARGET="rules:#views#modificarPersona.xhtml"
+    TITLE="modificarPersona" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#anyadirPersona.xhtml"
+  PATH="/views/anyadirPersona.xhtml" SHAPE="672,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#modificarPersona.xhtml"
+  PATH="/views/modificarPersona.xhtml" SHAPE="672,177,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

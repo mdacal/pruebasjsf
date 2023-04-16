@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<f:metadata>
+	<f:event type="preRenderView"
+			listener="#{tablaPersonas.cargarDatosPersonas}"/>
+	</f:metadata>
+<body>
+	<h3>Bienvenido a JSF, #{user.name}</h3>
+	<h:form>
+		<h:commandLink action="/index" value="Salir" />
+	</h:form>
+
+	<h1>
+		<h:outputText value="Ejemplo de Conexión a BD con JDBC" />
+	</h1>
+	
+	<h:dataTable value="#{tablaPersonas.listaPersonas}" var="p">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="id"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.id}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="nombre"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.nombre}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="apellidos"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.apellidos}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="fecha nacimiento"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.fechaNacimiento}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="observaciones"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.observaciones}"></h:outputText>
+		</h:column>
+		<h:column>
+			<h:form>
+				<h:commandButton action="#{tablaPersonas.removePersonaDB(p)}"
+					onclick="return confirm('¿Estás seguro de querer borrarla?')"
+					value="Borrar"></h:commandButton>
+			</h:form>
+		</h:column>
+		<h:column>
+			<h:form>
+				<h:commandButton action="#{tablaPersonas.modificarPersona(p)}"
+					value="Modificar"></h:commandButton>
+			</h:form>
+		</h:column>
+	</h:dataTable>
+
+	<h:form>
+	<h:commandButton value="Recargar Datos"	action="#{tablaPersonas.cargarDatosPersonas()}" />
+		<h:commandButton value="Añadir" action="add" />
+	</h:form>
+</body>
+</html>

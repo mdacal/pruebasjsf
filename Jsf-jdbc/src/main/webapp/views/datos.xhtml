@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<!-- f:metadata>
+	<f:event type="preRenderView"
+			listener="#{tablaPersonas.pintarDatos}"/>
+	f:metadata> 
+-->
+<body>
+	<h1>Datos de Personas:</h1>
+
+	<h:dataTable value="#{tablaPersonas.listaPersonas}" var="persona">
+      <h:column>
+         <f:facet name="header">
+            <h:outputText value="id"></h:outputText>
+         </f:facet>
+         <h:outputText value="#{persona.id}"></h:outputText>
+      </h:column>
+      <h:column>
+         <f:facet name="header">
+            <h:outputText value="nombre"></h:outputText>
+         </f:facet>
+         <h:outputText value="#{persona.nombre}"></h:outputText>
+      </h:column>
+      <h:column>
+         <f:facet name="header">
+            <h:outputText value="apellidos"></h:outputText>
+         </f:facet>
+         <h:outputText value="#{persona.apellidos}"></h:outputText>
+      </h:column>
+      <h:column>
+         <f:facet name="header">
+            <h:outputText value="fecha nacimiento"></h:outputText>
+         </f:facet>
+         <h:outputText value="#{persona.fechaNacimiento}"></h:outputText>
+      </h:column>
+      <h:column>
+         <f:facet name="header">
+            <h:outputText value="observaciones"></h:outputText>
+         </f:facet>
+         <h:outputText value="#{persona.observaciones}"></h:outputText>
+      </h:column>
+      <h:column>
+         <h:form>
+            <h:commandButton action="#{tablaPersonas.removePersona(persona)}"
+               value="Borrar"></h:commandButton>
+         </h:form>
+      </h:column>
+   </h:dataTable>
+   <h:form>
+    <h:panelGrid columns="2">
+       <!-- primera fila -->
+       <h:outputText value="Id:"></h:outputText>
+       <!-- esta persona hace referencia al ManagedBean PersonaBean, no al elemento de la colección que recorríamos en la tabla anterior -->
+       <h:inputText id="id" value="#{persona.id}"></h:inputText>
+
+       <!-- segunda fila -->
+       <h:outputText value="Nombre:"></h:outputText>
+       <h:inputText id="nombre" value="#{persona.nombre}"></h:inputText>
+
+       <!-- tercera fila. el outputLabel esta vacio y es para hacer
+            que el boton quede en la segunda columna -->
+       <h:outputLabel></h:outputLabel>
+       <h:commandButton action="#{tablaPersonas.addPersona(persona)}" value="Añadir"></h:commandButton>
+    </h:panelGrid>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Primer proyecto JSF</title>
+</h:head>
+<h:body>
+	<h1>Bienvenido a JSF!</h1>
+	<h:form>
+		<h3>Ingresar usuario y password</h3>
+		<table>
+			<tr>
+				<td>Usuario:</td>
+				<td><h:inputText value="#{user.name}"/></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><h:inputSecret  value="#{user.password}"/></td>
+			</tr>
+			<tr>
+				<td>
+					<!-- en el action agregamos el recurso en el servidor al que vamos a invocar: -->
+					<!--  action si hay que analizar reglas de navegacion, y actionListener si solo vamos a pintar datos en esta vista, por ejemplo -->
+					<h:commandButton value="Entrar" action="#{userController.login()}"></h:commandButton>
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

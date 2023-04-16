@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="Id:" />
+			<h:inputText id="id" value="#{addPersonaController.persona.id}"
+				disabled="true" />
+
+			<h:outputText value="Nombre:" />
+			<h:inputText id="nombre"
+				value="#{addPersonaController.persona.nombre}" />
+
+			<h:outputText value="Apellidos:" />
+			<h:inputText id="apellidos"
+				value="#{addPersonaController.persona.apellidos}" />
+
+			<h:outputText value="Fecha Nacimiento:" />
+			<h:inputText id="fechaNacimiento"
+				value="#{addPersonaController.persona.fechaNacimiento}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:inputText>
+
+			<h:outputText value="Observaciones:" />
+			<h:inputText id="observaciones"
+				value="#{addPersonaController.persona.observaciones}" />
+
+			<h:outputLabel />
+			<h:commandButton action="#{addPersonaController.addPersonaDB()}"
+				value="Añadir" />
+		</h:panelGrid>
+	</h:form>
+</body>
+</html>

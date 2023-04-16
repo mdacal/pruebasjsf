@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+</h:head>
+<body>
+
+	<h3>Bienvenido a JSF #{user.name}</h3>
+	<h:form>
+		<h:commandLink action="/index" value="Salir" />
+	</h:form>
+
+	<h:form>
+		<h:commandButton value="Pintar datos"
+			action="#{tablaPersonas.cargarDatosPersonas()}" />
+	</h:form>
+
+	<h:dataTable value="#{tablaPersonas.listaPersonas}" var="p">
+<h:column>
+			<f:facet name="header">
+				<h:outputText value="id"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.id}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="nombre"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.nombre}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="apellidos"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.apellidos}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="fecha nacimiento"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.fechaNacimiento}"></h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="observaciones"></h:outputText>
+			</f:facet>
+			<h:outputText value="#{p.observaciones}"></h:outputText>
+		</h:column>
+
+		<h:column>
+			<h:form>
+				<h:commandButton action="#{tablaPersonas.borraPersonaDB(p)}" value="Borrar" ></h:commandButton>
+			</h:form>
+		</h:column>
+		
+	</h:dataTable>
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="welcome::#views#welcome.xhtml" NAME="output"
+    PATH="/views/welcome.xhtml" TARGET="rules:#views#welcome.xhtml"
+    TITLE="welcome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#welcome.xhtml"
+  PATH="/views/welcome.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#views#welcome.xhtml:0" NAME="item"
+   PATH="/views/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="add::#views#addAlumno.xhtml" NAME="output"
+    PATH="/views/addAlumno.xhtml" TARGET="rules:#views#addAlumno.xhtml"
+    TITLE="add" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#views#welcome.xhtml:1" NAME="item1"
+   PATH="/views/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mod::#views#modAlumno.xhtml" NAME="output"
+    PATH="/views/modAlumno.xhtml" TARGET="rules:#views#modAlumno.xhtml"
+    TITLE="mod" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#views#addAlumno.xhtml"
+  PATH="/views/addAlumno.xhtml" SHAPE="672,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#views#modAlumno.xhtml"
+  PATH="/views/modAlumno.xhtml" SHAPE="672,177,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>
